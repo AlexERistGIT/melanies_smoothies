@@ -5,6 +5,7 @@ import streamlit as st
 from snowflake.snowpark.functions import col
 
 
+
 ########################################################################################
 # Write directly to the app
 st.title(":cup_with_straw: Customize Your Smoothie! :cup_with_straw:")
@@ -15,9 +16,7 @@ st.write(
     """
 )
 
-## nur für Streamlit Ausserhalb Snowflake: (SnIS)
-cnx = st.connection("snowflake")
-session=cnx.session()
+
 
 ########################################################################################Name Box
 title= st.text_input(label="Movie title", 
@@ -39,7 +38,11 @@ st.write("The name of your smoothie will be: ",name_on_order)
 
 ########################################################################################
 # Dataframe im App "auflisten", Eine Spalte selektieren: index ist automatisch da :) die Schlange ! ;)  
-session = get_active_session()
+# NCIHT FÜR STREAMLET SnIS: session = get_active_session()
+## nur für Streamlit Ausserhalb Snowflake: (SnIS)
+cnx=st.connection("snowflake")
+session=cnx.session()
+
 my_dataframe = session.table("smoothies.public.fruit_options").select(col('FRUIT_NAME'))
 #Im Streamapp darstellen ? Das hier einckommentieren: st.dataframe(data=my_dataframe, use_container_width=True)
 
