@@ -66,8 +66,8 @@ if ingredients_list:
         st.subheader(fruit_chosen+' Nutrition Information')
         ### response Filtern
         fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_chosen)
-        st.text(fruityvice_response.json()) # json response zurückgeben als Text
-        fv_df=st.dataframe(data=fruityvice_response.json(),use_container_width=True) # response als dataframe darstellen
+        # st.text(fruityvice_response.json()) # json response zurückgeben als Text
+        fv_df=st.dataframe(data=fruityvice_response.json(),use_container_width=True) # json response als dataframe zurückgeben
     # st.write('You selection is:', ingredients_string)
 
     # liste in die Tabelle schreiben
