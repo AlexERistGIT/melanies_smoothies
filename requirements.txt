@@ -1,7 +1,12 @@
 name: app_environment
-channels:
-  - snowflake
-dependencies:
-  - python=3.8.*
-  - snowflake-snowpark-python=
-  - streamlit=1.22.0
+# fuer SnIS only
+snowflake-connector-python
+snowflake-snowpark-python
+streamlit==1.31.1
+
+# nicht für SnIS: channels:
+# nicht für SnIS: - snowflake
+# nicht für SnIS: dependencies:
+# nicht für SnIS:   - python=3.8.*
+# nicht für SnIS:   - snowflake-snowpark-python=
+# nicht für SnIS:   - streamlit=1.22.0
