@@ -80,7 +80,8 @@ if incredients_list:
 import requests
 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
 st.text(fruityvice_response.json()) # json response zurückgeben
- 
+fv_df=st.dataframe(data=fruityvice_response.json(),use_container_width=true) # als dataframe
+
 
 
 ######################################################################################## Trash
