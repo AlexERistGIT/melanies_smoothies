@@ -1,6 +1,6 @@
 # Import python packages
 import streamlit as st
-from snowflake.snowpark.context import get_active_session
+# GILT NICHT FÜR Streamlit Ausserhalb Snowflake: (SnIS): from snowflake.snowpark.context import get_active_session
 # "Focus" on Column
 from snowflake.snowpark.functions import col
 
@@ -14,6 +14,10 @@ st.write(
     \n*** https://docs.streamlit.io/library/api-reference/widgets/st.selectbox
     """
 )
+
+## nur für Streamlit Ausserhalb Snowflake: (SnIS)
+cnx = st.connection("snowflake")
+session=cnx.session()
 
 ########################################################################################Name Box
 title= st.text_input(label="Movie title", 
