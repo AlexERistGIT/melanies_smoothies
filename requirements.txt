@@ -1,4 +1,4 @@
-name: app_environment
+# nicht für SnIS:  name: app_environment
 # fuer SnIS only
 snowflake-connector-python
 snowflake-snowpark-python
